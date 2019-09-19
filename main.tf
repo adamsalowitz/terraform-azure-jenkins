@@ -4,15 +4,15 @@ provider "azurerm" {
 }
 
 # Create a resource group
-resource "azurerm_resource_group" "asalowi1-dev" {
-  name     = "asalowi1-dev"
+resource "azurerm_resource_group" "rg-dev" {
+  name     = "rg-dev"
   location = "West US"
 }
 
 # Create a virtual network within the resource group
-resource "azurerm_virtual_network" "asalowi1-dev" {
+resource "azurerm_virtual_network" "rg-dev" {
   name                = "dev-network"
-  resource_group_name = "${azurerm_resource_group.asalowi1-dev.name}"
-  location            = "${azurerm_resource_group.asalowi1-dev.location}"
+  resource_group_name = "${azurerm_resource_group.rg-dev.name}"
+  location            = "${azurerm_resource_group.rg-dev.location}"
   address_space       = ["10.0.0.0/16"]
 }
